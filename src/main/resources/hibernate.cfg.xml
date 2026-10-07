@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- DIALECTE MYSQL -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQL8Dialect
+        </property>
+
+        <!-- DRIVER MYSQL -->
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+
+        <!-- CONNEXION MYSQL -->
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/exam?useSSL=false&amp;serverTimezone=UTC
+        </property>
+
+        <!-- UTILISATEUR -->
+        <property name="hibernate.connection.username">
+            root
+        </property>
+
+        <!-- MOT DE PASSE -->
+        <property name="hibernate.connection.password">
+        </property>
+        <property name="hibernate.show_sql">
+            false
+        </property>
+
+        <!-- FORMATER SQL -->
+        <property name="hibernate.format_sql">
+            true
+        </property>
+
+        <!-- CREATION / MODIFICATION AUTOMATIQUE DES TABLES -->
+        <property name="hibernate.hbm2ddl.auto">
+            update
+        </property>
+        <mapping class="ma.ens.models.Assurance"/>
+        <mapping class="ma.ens.models.Client"/>
+        <mapping class="ma.ens.models.Contrat"/>
+    </session-factory>
+
+</hibernate-configuration>
